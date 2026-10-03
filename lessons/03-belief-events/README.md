@@ -1,38 +1,51 @@
-# 第三课：响应新增信念
+# Lesson 3: React to a New Belief
 
-目标：区分“新目标出现”和“新信念加入”。
+**Goal:** distinguish a new-goal event from a belief-addition event.
 
-从项目根目录运行：
+## Run
+
+From the repository root:
+
 ```bash
 cd lessons/03-belief-events
 jason belief_events.mas2j
 ```
 
-预期关键输出：
+Expected key output:
+
 ```text
 [robot] Taking the stairs.
 [robot] Delivering food to alice
 [robot] Delivery completed for alice
 ```
 
-与第二课相比，只增加了这条计划：
+## What Changed?
+
+Compared with Lesson 2, the agent has one additional plan:
+
 ```prolog
 +delivered(Customer)
     <- .print("Delivery completed for ", Customer).
 ```
 
-执行送餐计划中的 `+delivered(alice)` 时，信念库发生变化，产生对应的新增信念事件。上面的计划匹配这个事件并打印完成消息。
+When the delivery plan executes `+delivered(alice)`, the belief base changes. This produces a belief-addition event. The new plan matches that event and prints the confirmation.
 
-比较：
-- `+!deliver(Customer)`：新的成就目标事件。
-- `+delivered(Customer)`：新增信念事件。
-- 计划体中的 `+delivered(Customer)`：执行一次信念添加操作。
+Compare the expressions:
 
-同一串文字位于计划头部和计划体时，作用不同：前者匹配事件，后者执行操作。
+| Expression and location | Meaning |
+| --- | --- |
+| `+!deliver(Customer)` in a plan head | Match a new achievement-goal event |
+| `+delivered(Customer)` in a plan head | Match a belief-addition event |
+| `+delivered(Customer)` in a plan body | Execute a belief addition |
 
-练习：把完成计划的输出改为 `Customer notified: `，保持触发事件不变，重新运行。
+The same expression has different roles in a plan head and a plan body: one matches an event; the other performs an operation.
 
-注意：给已有的同来源信念再次执行完全相同的添加，通常不会形成新的信念变化事件。不要把重复添加信念当作消息队列。
+## Exercise
 
-口述练习：
+Change the confirmation message to `Customer notified: `, leaving the triggering event unchanged. Stop and rerun, then check the final message.
+
+Adding exactly the same belief again from the same source normally does not change the belief base or produce another belief-addition event. Repeated belief additions should not be treated as a message queue.
+
+## Explain It Aloud
+
 > Adding a new belief can trigger another plan. The delivery plan records that the food has arrived. This belief change creates an event, and the agent reacts by printing a confirmation.

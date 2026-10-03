@@ -1,37 +1,60 @@
-# 第二课：用信念选择送餐计划
+# Lesson 2: Choose a Delivery Plan Using Beliefs
 
-目标：运行我们讨论过的送餐例子。同一个目标，根据电梯状态选择不同的计划。
+**Goal:** run the delivery example and see how the same goal can select different plans depending on the elevator's state.
 
-从项目根目录运行：
+## Run
+
+From the repository root:
+
 ```bash
 cd lessons/02-delivery
 jason delivery.mas2j
 ```
 
-预期关键输出：
+Expected key output:
+
 ```text
 [robot] Taking the stairs.
 [robot] Delivering food to alice
 ```
 
-打开 `robot.asl`：
-- `elevator(broken).` 是初始信念。
-- `!deliver(alice).` 是初始目标。
-- 两个计划都匹配 `+!deliver(Customer)`，但适用条件不同。
-- `:` 后面的条件在信念库上求值。
-- 大写开头的 `Customer` 是变量，匹配目标时绑定为 `alice`。
-- `;` 分隔同一个计划中的步骤。
-- `+delivered(Customer)` 在执行时增加一条信念。
+## Read the Code
 
-这里的信念是机器人掌握的信息，不一定等于现实。打印和新增信念只是教学模拟，没有真正移动机器人，也没有独立确认送餐成功。
+Open `robot.asl`:
 
-意图在哪里？你没有声明一个叫 intention 的字段。Jason 选定并实例化计划，把它加入执行中的意图。这是运行时状态。计划是备用方法；意图是已经承诺执行的计划实例。
+- `elevator(broken).` is an initial belief.
+- `!deliver(alice).` is an initial achievement goal.
+- Both plans match `+!deliver(Customer)`, but their context conditions differ.
+- The condition after `:` is evaluated against the agent's beliefs.
+- `Customer` is a variable because its name starts with an uppercase letter. It is bound to `alice` when the plan matches this goal.
+- `;` separates execution steps in the plan body.
+- `+delivered(Customer)` adds a belief during execution.
 
-练习一：把 `elevator(broken).` 替换为 `elevator(working).`，停止并重新运行。预期路线变为 `Taking the elevator.`。两条互斥状态只保留一条。
+Read this plan as a sentence:
 
-练习二：把初始目标里的 `alice` 改为 `bob`。预期收餐人变为 bob，两个计划都不用改。
+```prolog
++!deliver(Customer) : elevator(broken)
+    <- .print("Taking the stairs.");
+       .print("Delivering food to ", Customer);
+       +delivered(Customer).
+```
 
-思考：如果两个电梯状态都删掉，两个计划的条件都不成立。这个目标会因为没有适用计划而失败。条件为假，不会自动让目标等到条件变真。
+“When a new delivery goal appears, if I believe the elevator is broken, take the stairs, print the delivery message, and record that the delivery is complete.”
 
-口述练习：
+The first plan requires `elevator(working)`. That belief is absent, so its condition does not hold. The second plan requires `elevator(broken)`, which is present, so the robot chooses the stairs.
+
+A belief is information the agent holds, which can differ from reality. Printing a message and adding a belief only simulate delivery; they do not move a real robot or independently verify success.
+
+## Where Is the Intention?
+
+There is no field called `intention` in this source file. Jason selects and instantiates a plan, then adds it to an executing intention. A plan is an available method; an intention is a commitment to execute an instantiated plan.
+
+## Exercises
+
+1. Replace `elevator(broken).` with `elevator(working).`. Stop and rerun. Expect `Taking the elevator.` Keep exactly one elevator state.
+2. Change the initial goal from `!deliver(alice).` to `!deliver(bob).`. Expect the recipient to change to bob without modifying either plan.
+3. Predict what happens if you remove both elevator states. Neither context holds, so the goal fails because there is no applicable plan. A false context does not automatically make the goal wait until that context becomes true.
+
+## Explain It Aloud
+
 > The agent believes that the elevator is broken. It has a goal to deliver food to Alice. Jason selects the plan whose context is true. The agent takes the stairs and records the delivery as complete.

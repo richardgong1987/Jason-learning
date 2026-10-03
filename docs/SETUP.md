@@ -1,84 +1,84 @@
-# 安装与排错
+# Setup and Troubleshooting
 
-## 安装一次，后续直接运行课程
+## Install Once
 
-官方 CLI 文档目前以 Java 21 为前提。
+The current official Jason CLI installation guide uses Java 21.
 
-1. 安装 JDK 21。`java -version` 应显示 21。
-2. 从 [官方发布页](https://github.com/jason-lang/jason/releases) 下载 `jason-bin-…zip`，解压到固定位置。
-3. 将解压目录下的 `bin` 加到 PATH。重开终端执行 `jason --version`。
-4. 使用 VS Code 或其他文本编辑器打开这个项目。
+1. Install JDK 21. Check that `java -version` reports version 21.
+2. Download `jason-bin-...zip` from the [official releases page](https://github.com/jason-lang/jason/releases) and extract it to a permanent location.
+3. Add the extracted distribution's `bin` directory to your PATH. Reopen your terminal and run `jason --version`.
+4. Open this repository in VS Code or another text editor.
 
 ### Windows
 
-官方推荐使用 Git Bash。Java 21 和 Jason 安装完成后，在 Git Bash 中运行：
+The official guide recommends Git Bash. After installing Java 21 and Jason, run these commands in Git Bash:
 
 ```bash
 java -version
 jason --version
 ```
 
-可以通过 Windows 环境变量设置，把 Jason 的 `bin` 文件夹加入用户 Path；修改后关闭并重新打开 Git Bash。
+Use Windows environment-variable settings to add Jason's `bin` directory to your user Path. Close and reopen Git Bash after changing Path.
 
-### macOS / Linux
+### macOS and Linux
 
-把解压后 `bin` 目录加入 shell 的 PATH，例如临时配置：
+Add the extracted `bin` directory to your shell's PATH. For a temporary configuration:
 
 ```bash
 export PATH="/your/path/to/jason/bin:$PATH"
 jason --version
 ```
 
-将示例路径替换为实际位置。若 `jason` 脚本没有执行权限，在其所在 bin 目录执行 `chmod +x jason`。希望永久生效时，把 PATH 配置加入你实际使用的 shell 启动配置。
+Replace the example path with the actual installation path. If the `jason` script is not executable, enter its `bin` directory and run `chmod +x jason`. For a permanent PATH configuration, add the appropriate line to the startup configuration of the shell you use.
 
-## 运行第一课
+## Run Lesson 1
 
-在 jason-learning 根目录执行：
+From the repository root:
 
 ```bash
 cd lessons/01-hello
 jason hello.mas2j
 ```
 
-每课目录都包含自己的 `.mas2j` 和 `.asl` 文件，不需要运行 `jason app create`，也不需要编写 Java 环境类。
+Every lesson contains its own `.mas2j` configuration and `.asl` source files. You do not need to run `jason app create` or write a Java environment class for these examples.
 
-这组例子没有额外依赖。如果通常的启动命令遇到 Gradle 或下载问题，官方 CLI 还提供直接启动方式：
+These lessons have no additional dependencies. If the usual launch command encounters Gradle or download problems, the official CLI also provides a direct launch command:
 
 ```bash
 jason mas start --mas2j=hello.mas2j
 ```
 
-运行前仍然必须处于第一课目录。其他课替换为自己的配置文件名。
+Run it from the first lesson's directory. For another lesson, use its configuration filename.
 
-## 停止与重新运行
+## Stop and Rerun
 
-图形控制台启动时，可以使用控制台的停止/退出控件结束系统。前台终端启动时可以用 Ctrl+C。修改源代码后，先停止当前系统，再重新运行。
+If a graphical console opens, use its stop or exit controls to end the system. For a foreground terminal process, use Ctrl+C. Stop the current system before rerunning edited code.
 
-如果 CLI 启动的系统仍在后台，在另一个终端执行：
+If a CLI-started system remains in the background, open another terminal and list running systems:
 
 ```bash
 jason mas list
 ```
 
-根据列表中实际的系统名称停止它：
+Then stop the system using its actual name:
 
 ```bash
-jason mas stop <实际系统名称> --exit
+jason mas stop <actual-system-name> --exit
 ```
 
-不要原样输入尖括号占位符。
+Replace the placeholder, including the angle brackets, with the name from the list.
 
-## 常见问题
+## Common Problems
 
-| 问题 | 排查 |
+| Symptom | What to check |
 | --- | --- |
-| `jason: command not found` | bin 是否加入 PATH，终端是否重开 |
-| Java 版本错误 | `java -version` 是否为 21，PATH 是否优先指向旧 JDK |
-| 找不到 `.mas2j` | 当前目录是否为对应课的目录 |
-| 找不到 agent 源文件 | `.asl` 是否和配置在同一目录，名称是否匹配 |
-| 语法错误 | 检查英文 `.`、`;`、`:`、`<-`，避免中文标点 |
-| 目标没有适用计划 | 检查计划事件能否匹配目标、条件信念是否成立 |
-| 修改后输出没变化 | 是否停止旧系统，是否运行了正确的课 |
-| 打印结束但窗口仍打开 | agent 在等待新事件，这是正常运行方式 |
+| `jason: command not found` | Is Jason's bin directory in PATH? Did you reopen the terminal? |
+| Java version error | Does `java -version` report 21? Is PATH selecting an older JDK? |
+| Configuration file not found | Are you in the correct lesson directory? |
+| Agent source file not found | Is the `.asl` file beside the configuration, with the matching name? |
+| Syntax error | Check `.`, `;`, `:`, and `<-` and the location of the reported error. |
+| No applicable plan | Does the event match a plan, and is its context condition true? |
+| An edit has no effect | Did you stop the old system and launch the correct lesson again? |
+| Output finishes but the console stays open | The agent is waiting for new events; this is normal. |
 
-系统日志和控制台格式可能随版本变化。每课 README 给出要观察的关键消息，不要求日志逐字一致。
+Logs and console formatting can vary between Jason versions. Each lesson lists the key messages to look for; the complete log does not need to match word for word.
