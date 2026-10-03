@@ -1,0 +1,4 @@
+MAS hello {
+    agents:
+        robot;
+}

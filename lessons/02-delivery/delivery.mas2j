@@ -1,0 +1,4 @@
+MAS delivery {
+    agents:
+        robot;
+}

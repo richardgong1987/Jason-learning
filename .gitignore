@@ -1,0 +1,9 @@
+# Jason / Java generated files
+*.class
+*.log
+.gradle/
+build/
+bin/
+out/
+.DS_Store
+Thumbs.db

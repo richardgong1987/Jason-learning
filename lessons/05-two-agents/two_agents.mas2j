@@ -1,0 +1,5 @@
+MAS two_agents {
+    agents:
+        manager;
+        robot;
+}

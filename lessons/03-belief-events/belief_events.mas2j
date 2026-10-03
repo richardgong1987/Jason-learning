@@ -1,0 +1,4 @@
+MAS belief_events {
+    agents:
+        robot;
+}
