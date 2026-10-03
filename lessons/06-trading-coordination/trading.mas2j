@@ -1,0 +1,7 @@
+MAS trading {
+    agents:
+        coordinator;
+        analyst;
+        risk;
+        execution;
+}

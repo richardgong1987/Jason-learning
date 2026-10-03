@@ -1,6 +1,6 @@
-# Jason Learning — Start with a Delivery Robot
+# Jason Learning — From BDI Basics to an Advanced Trading Demo
 
-A step-by-step introduction to Jason and AgentSpeak. Begin with one agent's goal and plan, then learn how two agents communicate. Every lesson is a separate project with explanations, commands, expected output, exercises, and a short passage for spoken English practice.
+A step-by-step introduction to Jason and AgentSpeak, leading to an advanced demo that combines Jason, an existing Python trading project, an AI model, and cTrader. Begin with one agent's goal and plan, then learn how two agents communicate. Every lesson is a separate project with explanations, commands, expected output, exercises, and a short passage for spoken English practice.
 
 ## Start with Lesson 1
 
@@ -32,8 +32,19 @@ After completing a goal, Jason usually keeps running and waits for new events. A
 | 03 | Reacting to a new belief | [Belief events](lessons/03-belief-events/README.md) |
 | 04 | Subgoals and belief updates | [Preparation subgoal](lessons/04-subgoals/README.md) |
 | 05 | Communication between manager and robot | [Two agents](lessons/05-two-agents/README.md) |
+| 06 | Trading coordination, rejection and goal-failure handling | [Paper trading workflow](lessons/06-trading-coordination/README.md) |
 
 For each lesson: predict the output, run the original example, change one thing, stop and rerun, then explain the result in your own words.
+
+## Advanced Trading Destination
+
+The final objective is an advanced collaborative trading demonstration: Jason coordinates goals and recovery, the existing Python project computes strategy features, an AI model supplies structured analysis, and cTrader executes approved demo-account commands.
+
+- [Learning roadmap and integration milestones](docs/ROADMAP.md)
+- [Capstone architecture and acceptance scenarios](capstone/README.md)
+- [Proposed message contracts](capstone/contracts/README.md)
+
+Lesson 6 provides a local four-agent paper workflow now. The real Python, AI, and cTrader adapters are later milestones and are not connected in this repository update.
 
 ## The Mental Model
 
