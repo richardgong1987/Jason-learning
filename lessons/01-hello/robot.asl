@@ -1,6 +1,4 @@
-// Initial goal: say hello.
-!start.
+!gong_start.
 
-// A plan for the new goal.
-+!start
-    <- .print("Hello! I am a Jason agent.").
++!gong_start
+    <- .print("Hello! I am a Jason agent gong.").
