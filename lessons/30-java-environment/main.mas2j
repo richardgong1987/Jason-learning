@@ -1,0 +1,5 @@
+MAS lesson30 {
+    environment: demo.DoorEnvironment
+    agents:
+        robot;
+}

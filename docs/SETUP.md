@@ -40,9 +40,9 @@ cd lessons/01-hello
 jason hello.mas2j
 ```
 
-Every lesson contains its own `.mas2j` configuration and `.asl` source files. You do not need to run `jason app create` or write a Java environment class for these examples.
+Every lesson contains its own `.mas2j` configuration and `.asl` source files. Lessons 01–28 do not require you to write a Java environment. Lessons 29–30 include Java source and have additional compilation instructions in their READMEs. You do not need to run `jason app create` to study the ASL examples.
 
-These lessons have no additional dependencies. If the usual launch command encounters Gradle or download problems, the official CLI also provides a direct launch command:
+The ASL-only lessons use the standard Jason runtime. If the usual launch command encounters Gradle or download problems, the official CLI also provides a direct launch command:
 
 ```bash
 jason mas start --mas2j=hello.mas2j
@@ -82,3 +82,16 @@ Replace the placeholder, including the angle brackets, with the name from the li
 | Output finishes but the console stays open | The agent is waiting for new events; this is normal. |
 
 Logs and console formatting can vary between Jason versions. Each lesson lists the key messages to look for; the complete log does not need to match word for word.
+
+
+## Extended-course checks
+
+The automated checker covers lessons 07–30. Install JDK 21 (including `javac`), Python 3, and the Jason 3.3.0 interpreter with its runtime dependencies. Set `JASON_CLASSPATH` to the extracted distribution's runtime JARs; the actual distribution layout may differ.
+
+```bash
+export JASON_CLASSPATH="/absolute/path/to/jason/lib/*"
+python3 scripts/run_checks.py
+python3 scripts/run_checks.py --lesson 16
+```
+
+The checker uses a temporary compilation directory for Java, console logging, an isolated process per lesson, and a bounded observation window. See [verification](VERIFICATION.md). When launching manually on Windows use `;` rather than `:` between Java classpath entries; the Python checker uses the platform-specific separator automatically.

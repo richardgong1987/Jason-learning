@@ -36,6 +36,15 @@ After completing a goal, Jason usually keeps running and waits for new events. A
 
 For each lesson: predict the output, run the original example, change one thing, stop and rerun, then explain the result in your own words.
 
+## Extended course: 24 new lessons
+
+The repository now has **30 lessons**. Continue with [the extended learning path](docs/LEARNING_PATH.md) for variables, rules, negation, arithmetic, lists, loops, belief updates, plan selection, failure handling, concurrent intentions, waiting, cancellation, suspension, annotations, messaging, duplicate handling, namespaces, dynamic plans, and Java extensions.
+
+- [Start Lesson 07: terms and unification](lessons/07-terms-and-unification/README.md)
+- [Syntax-to-example index](docs/SYNTAX_INDEX.md)
+- [Common mistakes and BDI mapping](docs/MENTAL_MODEL.md)
+- [Runtime verification and checker instructions](docs/VERIFICATION.md)
+
 ## Advanced Trading Destination
 
 The final objective is an advanced collaborative trading demonstration: Jason coordinates goals and recovery, the existing Python project computes strategy features, an AI model supplies structured analysis, and cTrader executes approved demo-account commands.
@@ -91,4 +100,4 @@ See [setup and troubleshooting](docs/SETUP.md). When reporting a problem, includ
 
 ## Verification Status
 
-Project structure, documentation links, agent source-file references, and configuration references have been checked. The preparation environment has Java 17 and no Jason installation, so the examples have not been executed in Jason here. Expected output follows the documented syntax and execution model. Start by verifying Lesson 1 on your computer. These examples were written for this project.
+See [the verification report](docs/VERIFICATION.md) for the exact runtime, checks, and limits. New examples are kept separate from the original six lessons. The examples and explanations are original teaching material; the official references describe the language and library APIs.

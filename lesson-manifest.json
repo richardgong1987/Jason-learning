@@ -1,0 +1,243 @@
+[
+  {
+    "number": 7,
+    "folder": "07-terms-and-unification",
+    "title": "Terms, variables, and unification",
+    "expected": [
+      "Parcel: alice / book / 2",
+      "Route: tokyo -> osaka"
+    ]
+  },
+  {
+    "number": 8,
+    "folder": "08-queries-and-rules",
+    "title": "Test goals and derived beliefs",
+    "expected": [
+      "Local customer: alice",
+      "Bob lives in osaka"
+    ]
+  },
+  {
+    "number": 9,
+    "folder": "09-negation-and-contexts",
+    "title": "Conjunction, disjunction, and two kinds of negation",
+    "expected": [
+      "Allowed: alice",
+      "Explicit denial: bob",
+      "Unknown permission: carol"
+    ]
+  },
+  {
+    "number": 10,
+    "folder": "10-arithmetic-and-comparisons",
+    "title": "Arithmetic, comparisons, and changing numeric state",
+    "expected": [
+      "Invoice total: 38",
+      "Large order",
+      "Counter: 1"
+    ]
+  },
+  {
+    "number": 11,
+    "folder": "11-lists-and-recursion",
+    "title": "Lists, head/tail patterns, and recursion",
+    "expected": [
+      "Items: 3",
+      "Pack: book",
+      "Pack: pen",
+      "Pack: bag",
+      "Packing complete"
+    ]
+  },
+  {
+    "number": 12,
+    "folder": "12-enumeration-and-collections",
+    "title": "Enumerating answers: for, findall, setof, count",
+    "expected": [
+      "Order: alice / book",
+      "Order: alice / pen",
+      "Order: bob / bag",
+      "All customers: [alice,alice,bob]",
+      "Unique customers: [alice,bob]",
+      "Order count: 3"
+    ]
+  },
+  {
+    "number": 13,
+    "folder": "13-belief-lifecycle",
+    "title": "Belief addition, deletion, replacement, and events",
+    "expected": [
+      "Final battery: 100",
+      "Reactive: new task observed",
+      "Reactive: old task removed"
+    ]
+  },
+  {
+    "number": 14,
+    "folder": "14-loops",
+    "title": "If, while, and recursive counters",
+    "expected": [
+      "Remaining: 3",
+      "Remaining: 2",
+      "Remaining: 1",
+      "All work finished",
+      "Countdown: 2",
+      "Countdown: 1",
+      "Recursive countdown finished"
+    ]
+  },
+  {
+    "number": 15,
+    "folder": "15-plan-selection",
+    "title": "Relevant plans, applicable plans, and labels",
+    "expected": [
+      "Stairs delivery: alice",
+      "Elevator delivery: bob"
+    ]
+  },
+  {
+    "number": 16,
+    "folder": "16-failure-and-retry",
+    "title": "Goal failure, bounded retry, and recovery",
+    "expected": [
+      "Door locked: attempt fails",
+      "Door opened",
+      "Parent continues after recovery"
+    ]
+  },
+  {
+    "number": 17,
+    "folder": "17-test-goal-plans",
+    "title": "Supplying missing information with test-goal plans",
+    "expected": [
+      "Cached location: tokyo",
+      "Looking up Bob",
+      "Obtained location: osaka"
+    ]
+  },
+  {
+    "number": 18,
+    "folder": "18-concurrent-intentions",
+    "title": "Subgoals versus new intentions: ! and !!",
+    "expected": [
+      "Sequential subgoal completed",
+      "Foreground continues",
+      "Background completed"
+    ]
+  },
+  {
+    "number": 19,
+    "folder": "19-waiting-and-timeouts",
+    "title": "Waiting for conditions and handling timeouts",
+    "expected": [
+      "Ready condition observed",
+      "Missing event timed out and was handled"
+    ]
+  },
+  {
+    "number": 20,
+    "folder": "20-cancelling-intentions",
+    "title": "Inspecting and cancelling a background goal",
+    "expected": [
+      "Work is intended",
+      "Work cancelled"
+    ]
+  },
+  {
+    "number": 21,
+    "folder": "21-suspend-and-resume",
+    "title": "Suspending, resuming, and rechecking beliefs",
+    "expected": [
+      "Work suspended",
+      "Work resumed",
+      "Command blocked after recheck"
+    ]
+  },
+  {
+    "number": 22,
+    "folder": "22-annotations-and-provenance",
+    "title": "Belief annotations and source provenance",
+    "expected": [
+      "Sensor A: 20",
+      "Sensor B: 22",
+      "All readings: [20,22]"
+    ]
+  },
+  {
+    "number": 23,
+    "folder": "23-tell-and-untell",
+    "title": "Tell, untell, achieve, and sender-aware replies",
+    "expected": [
+      "Worker processed: j1",
+      "Manager received completion: j1",
+      "Worker saw job information withdrawn: j1"
+    ]
+  },
+  {
+    "number": 24,
+    "folder": "24-ask-one-and-all",
+    "title": "Remote queries with askOne and askAll",
+    "expected": [
+      "One answer: price(book,12)[source(catalogue)]",
+      "All answers: [price(book,12)[source(catalogue)],price(pen,3)[source(catalogue)]]"
+    ]
+  },
+  {
+    "number": 25,
+    "folder": "25-correlation-and-duplicates",
+    "title": "Request IDs and duplicate-message handling",
+    "expected": [
+      "EXECUTED request: r1",
+      "DUPLICATE request: r1",
+      "Client observed completion: r1"
+    ]
+  },
+  {
+    "number": 26,
+    "folder": "26-strings-and-types",
+    "title": "Strings, term conversion, and type checks",
+    "expected": [
+      "Serialized: parcel(alice,2)",
+      "Parsed customer: alice",
+      "Greeting: HELLO ALICE",
+      "String length: 11",
+      "Ground numeric payload"
+    ]
+  },
+  {
+    "number": 27,
+    "folder": "27-include-and-namespaces",
+    "title": "Sharing source files and separating namespaces",
+    "expected": [
+      "Hello from the included plan",
+      "Stock item: book",
+      "Shipping vehicle: van"
+    ]
+  },
+  {
+    "number": 28,
+    "folder": "28-dynamic-plan-library",
+    "title": "Adding and removing a plan at runtime",
+    "expected": [
+      "Dynamic wave",
+      "Temporary plan removed"
+    ]
+  },
+  {
+    "number": 29,
+    "folder": "29-java-internal-action",
+    "title": "Writing a Java internal action",
+    "expected": [
+      "Shipping fee: 8"
+    ]
+  },
+  {
+    "number": 30,
+    "folder": "30-java-environment",
+    "title": "External actions and environment percepts",
+    "expected": [
+      "Environment confirmed open door",
+      "Reactive percept: door is open"
+    ]
+  }
+]

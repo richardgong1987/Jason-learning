@@ -1,0 +1,5 @@
+MAS lesson25 {
+    agents:
+        client;
+        worker;
+}

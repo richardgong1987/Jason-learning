@@ -1,0 +1,4 @@
+MAS lesson16 {
+    agents:
+        robot;
+}

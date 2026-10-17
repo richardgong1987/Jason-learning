@@ -20,7 +20,7 @@ The integrated capstone is the final destination. It is not implemented yet. Les
 | 8: cTrader demo account | One selected broker-execution adapter | Account state, symbols, demo orders, and execution reports flow through the same interface |
 | 9: Final demonstration | Integrated scenarios with visible BDI state and an event trace | Every acceptance scenario in the capstone has an observable result |
 
-Only stages 1 and 2 have example source code in this update. Stage 2 still needs runtime verification in Jason. Stages 3–9 are planned work.
+The [extended course](LEARNING_PATH.md) now supplies lessons 07–30, including cancellation (20), suspend/resume with a fresh permission check (21), request correlation/deduplication (25), and Java extension points (29–30). These teach parts of stages 3 and 7 locally; they do not implement the full capstone execution ledger or external integrations. Stages 4–9 remain integration work. See [verification](VERIFICATION.md) for the runtime results.
 
 ## Existing cTrader Code
 
