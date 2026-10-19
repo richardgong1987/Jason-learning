@@ -7,6 +7,7 @@ authorized.
            -authorized;
            .resume(work);
            .print("Work resumed").
+
 +!work <- .wait(300); !commit.
 +!commit : authorized <- .print("Command accepted").
 +!commit : not authorized <- .print("Command blocked after recheck").
