@@ -251,3 +251,7 @@ The firefighting action is a short simulated wait followed by belief updates and
 - [Jason wait documentation](https://jason-lang.github.io/api/jason/stdlib/wait.html)
 - [Jason concurrency and atomic plans](https://jason-lang.github.io/jason/tech/concurrency.html)
 - [Local verification record](VERIFICATION.md)
+
+## Next: coordinating compatible plans
+
+Continue with [Lesson 32: the school picnic](../32-school-picnic/README.md). Roles are already assigned, but the agents must make food, transport, and games agree with common requirements.

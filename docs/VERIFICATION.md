@@ -42,3 +42,7 @@ The original six lessons' source programs were preserved and were not included i
 ## Lesson 31: firefighter graduation capstone
 
 The added capstone has its own [runtime and scenario verification record](../lessons/31-firefighter-coordination/VERIFICATION.md). Run `python3 scripts/run_checks.py --lesson 31 --seconds 6` for the default case and `python3 scripts/check_firefighters.py` for resource, priority, capacity, and missing-bid scenarios. This update does not replace the historical 24-lesson results above.
+
+## Lesson 32: school picnic
+
+See the [picnic verification record](../lessons/32-school-picnic/VERIFICATION.md). The default example is in the lesson manifest; `python3 scripts/check_picnic.py` checks weather, group size, limited transport, and missing readiness.

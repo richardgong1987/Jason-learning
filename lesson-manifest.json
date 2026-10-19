@@ -251,5 +251,18 @@
       "FINAL warehouse -> bravo",
       "CAPSTONE COMPLETE: both fires handled once"
     ]
+  },
+  {
+    "number": 32,
+    "folder": "32-school-picnic",
+    "title": "School picnic: shared constraints and team agreement",
+    "expected": [
+      "INITIAL food=20 seats=10 games=outdoor",
+      "CONFLICT insufficient transport seats",
+      "CONFLICT outdoor games in rain",
+      "VALIDATED v=2 food=20 seats=20 games=indoor",
+      "ALL READY v=2",
+      "PICNIC READY"
+    ]
   }
 ]

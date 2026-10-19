@@ -31,6 +31,7 @@ Each new lesson contains source, a separate MAS configuration, a small real-worl
 | 29 | Writing a Java internal action | [Open lesson](../lessons/29-java-internal-action/README.md) |
 | 30 | External actions and environment percepts | [Open lesson](../lessons/30-java-environment/README.md) |
 | 31 | Graduation capstone: firefighter negotiation and reallocation | [Open lesson](../lessons/31-firefighter-coordination/README.md) |
+| 32 | Team constraints, plan revision, and shared commitment | [Open lesson](../lessons/32-school-picnic/README.md) |
 
 ## How to learn from each example
 

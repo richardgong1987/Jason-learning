@@ -1,0 +1,7 @@
+MAS school_picnic {
+    agents:
+        teacher;
+        alice;
+        ben;
+        chloe;
+}

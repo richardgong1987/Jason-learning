@@ -68,3 +68,5 @@ Use the [official standard-library index](https://jason-lang.github.io/api/jason
 ## Integrated coordination example
 
 [Lesson 31: firefighter capstone](../lessons/31-firefighter-coordination/README.md) combines sourced messages, round IDs, condition waits, atomic reservation, list sorting, resource constraints, and failure propagation in one runnable protocol.
+
+[Lesson 32: school picnic](../lessons/32-school-picnic/README.md) combines a cross-agent compatibility rule, versioned proposals, sourced replies, a readiness barrier, and guarded execution.

@@ -38,7 +38,7 @@ For each lesson: predict the output, run the original example, change one thing,
 
 ## Extended course: 24 new lessons
 
-The repository now has **31 lessons**, including a runnable firefighter graduation capstone. Continue with [the extended learning path](docs/LEARNING_PATH.md) for variables, rules, negation, arithmetic, lists, loops, belief updates, plan selection, failure handling, concurrent intentions, waiting, cancellation, suspension, annotations, messaging, duplicate handling, namespaces, dynamic plans, and Java extensions.
+The repository now has **32 lessons**, including a runnable firefighter graduation capstone. Continue with [the extended learning path](docs/LEARNING_PATH.md) for variables, rules, negation, arithmetic, lists, loops, belief updates, plan selection, failure handling, concurrent intentions, waiting, cancellation, suspension, annotations, messaging, duplicate handling, namespaces, dynamic plans, and Java extensions.
 
 - [Start Lesson 07: terms and unification](lessons/07-terms-and-unification/README.md)
 - [Syntax-to-example index](docs/SYNTAX_INDEX.md)
@@ -55,6 +55,10 @@ jason main.mas2j
 ```
 
 This capstone is runnable now. The separate trading integration roadmap below remains a later destination.
+
+## Teamwork example: school picnic
+
+[Lesson 32](lessons/32-school-picnic/README.md) explores why good individual decisions do not guarantee teamwork. Alice proposes food for 20, Chloe proposes 10 transport seats, and Ben proposes outdoor games despite a rainy forecast. Four agents detect the conflicts, share requirements, revise their plans, and acknowledge a consistent version before acting.
 
 ## Advanced Trading Destination
 
