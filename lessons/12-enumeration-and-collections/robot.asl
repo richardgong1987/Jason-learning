@@ -1,6 +1,7 @@
 order(alice,book).
 order(alice,pen).
 order(bob,bag).
+
 !start.
 +!start <- for (order(Customer,Item)) {
                .print("Order: ",Customer," / ",Item);

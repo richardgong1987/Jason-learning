@@ -1,5 +1,6 @@
 battery(20).
 task(old).
+
 !start.
 +!start <- +task(new);
            -task(old);
