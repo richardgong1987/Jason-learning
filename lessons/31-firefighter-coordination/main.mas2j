@@ -1,0 +1,6 @@
+MAS firefighter_coordination {
+    agents:
+        dispatcher;
+        alpha;
+        bravo;
+}

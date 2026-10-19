@@ -38,3 +38,7 @@ Each MAS normally remains alive after finishing its demonstration. The checker o
 The checks validate the supplied deterministic scenarios. They do not prove every possible interleaving or every learner modification correct. Delay-based concurrency demonstrations are teaching examples; production coordination needs explicit handshakes and state checks.
 
 The original six lessons' source programs were preserved and were not included in the full new-course regression run. This work does not claim real Python, AI, broker, or physical-device integration. The standard Jason CLI's generated Gradle build and graphical console were not exercised here; direct interpreter execution was used for repeatable checks.
+
+## Lesson 31: firefighter graduation capstone
+
+The added capstone has its own [runtime and scenario verification record](../lessons/31-firefighter-coordination/VERIFICATION.md). Run `python3 scripts/run_checks.py --lesson 31 --seconds 6` for the default case and `python3 scripts/check_firefighters.py` for resource, priority, capacity, and missing-bid scenarios. This update does not replace the historical 24-lesson results above.

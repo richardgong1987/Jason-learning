@@ -80,3 +80,7 @@ python3 scripts/run_checks.py --lesson 30
 
 For a manual run, enter this lesson directory, compile `src/java/demo/DoorEnvironment.java` into `classes`, and launch `RunLocalMAS` with `classes` plus the Jason dependencies on the classpath, as in Lesson 29. A CLI-generated build must include `src/java`.
 
+
+## Next: graduation capstone
+
+Apply the course in [Lesson 31: firefighter coordination](../31-firefighter-coordination/README.md). Two firefighters bid for competing fires, revise unstarted commitments, and confirm completion.

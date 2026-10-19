@@ -239,5 +239,17 @@
       "Environment confirmed open door",
       "Reactive percept: door is open"
     ]
+  },
+  {
+    "number": 31,
+    "folder": "31-firefighter-coordination",
+    "title": "Capstone: firefighter negotiation and reallocation",
+    "expected": [
+      "INITIAL warehouse -> alpha",
+      "CANCELLATION CONFIRMED before reallocation",
+      "FINAL hospital -> alpha",
+      "FINAL warehouse -> bravo",
+      "CAPSTONE COMPLETE: both fires handled once"
+    ]
   }
 ]

@@ -1,4 +1,4 @@
-# Jason Learning — From BDI Basics to an Advanced Trading Demo
+# Jason Learning — From BDI Basics to Multiagent Coordination
 
 A step-by-step introduction to Jason and AgentSpeak, leading to an advanced demo that combines Jason, an existing Python trading project, an AI model, and cTrader. Begin with one agent's goal and plan, then learn how two agents communicate. Every lesson is a separate project with explanations, commands, expected output, exercises, and a short passage for spoken English practice.
 
@@ -38,12 +38,23 @@ For each lesson: predict the output, run the original example, change one thing,
 
 ## Extended course: 24 new lessons
 
-The repository now has **30 lessons**. Continue with [the extended learning path](docs/LEARNING_PATH.md) for variables, rules, negation, arithmetic, lists, loops, belief updates, plan selection, failure handling, concurrent intentions, waiting, cancellation, suspension, annotations, messaging, duplicate handling, namespaces, dynamic plans, and Java extensions.
+The repository now has **31 lessons**, including a runnable firefighter graduation capstone. Continue with [the extended learning path](docs/LEARNING_PATH.md) for variables, rules, negation, arithmetic, lists, loops, belief updates, plan selection, failure handling, concurrent intentions, waiting, cancellation, suspension, annotations, messaging, duplicate handling, namespaces, dynamic plans, and Java extensions.
 
 - [Start Lesson 07: terms and unification](lessons/07-terms-and-unification/README.md)
 - [Syntax-to-example index](docs/SYNTAX_INDEX.md)
 - [Common mistakes and BDI mapping](docs/MENTAL_MODEL.md)
 - [Runtime verification and checker instructions](docs/VERIFICATION.md)
+
+## Graduation capstone: firefighter coordination
+
+After Lesson 30, complete [Lesson 31: two firefighters, competing fires](lessons/31-firefighter-coordination/README.md). Run a three-agent simulation with local bids, priority-based allocation, acknowledged cancellation, reassignment, and duplicate/stale deployment protection. The guide explains the decisions with mathematical notation and includes experiments and graduation extensions.
+
+```bash
+cd lessons/31-firefighter-coordination
+jason main.mas2j
+```
+
+This capstone is runnable now. The separate trading integration roadmap below remains a later destination.
 
 ## Advanced Trading Destination
 

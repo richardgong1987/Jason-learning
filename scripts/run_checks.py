@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run lessons 07–30 with a supplied Jason 3.3.0 runtime; no third-party Python packages.
+"""Run lessons 07–31 with a supplied Jason 3.3.0 runtime; no third-party Python packages.
 
 JASON_CLASSPATH must contain interpreter and runtime dependencies. JAVA_HOME is
 optional if java and javac are already in PATH. Processes intentionally remain
@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--lesson', type=int, help='Only run one new lesson (07–30)')
+    parser.add_argument('--lesson', type=int, help='Only run one new lesson (07–31)')
     parser.add_argument('--seconds', type=float, default=4, help='Observation window per lesson')
     args = parser.parse_args()
     if args.seconds < 2:
@@ -39,7 +39,7 @@ def main():
     if args.lesson is not None:
         lessons = [x for x in lessons if x['number'] == args.lesson]
         if not lessons:
-            parser.error('This checker covers lessons 07–30')
+            parser.error('This checker covers lessons 07–31')
     failures = 0
     with tempfile.TemporaryDirectory(prefix='jason-learning-') as tmp:
         for lesson in lessons:
@@ -78,6 +78,15 @@ def main():
                 errors.append('side effect must execute exactly once')
             if number == 21 and 'Command accepted' in output:
                 errors.append('authorization recheck bypassed')
+            if number == 31:
+                for marker in ('EXTINGUISHED round=2 fire=hospital',
+                               'EXTINGUISHED round=3 fire=warehouse'):
+                    if normalized.count(marker) != 1:
+                        errors.append('completion must occur once: ' + marker)
+                if 'EXECUTING round=1' in output or 'COORDINATION STOPPED' in output:
+                    errors.append('stale deployment executed or coordination stopped')
+                if normalized.count('EXECUTING round=') != 2:
+                    errors.append('exactly two deployments required')
             if errors:
                 failures += 1
                 print(f'FAIL {number:02d}: {"; ".join(errors)}\n{output}')

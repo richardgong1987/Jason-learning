@@ -64,3 +64,7 @@ The course deliberately keeps the main path small enough to reason about. The fo
 - Custom reasoning-cycle selection, infrastructure configuration, distributed execution, and alternative belief-base implementations.
 
 Use the [official standard-library index](https://jason-lang.github.io/api/jason/stdlib/package-summary.html) for API-specific signatures. The interpreter's [official repository](https://github.com/jason-lang/jason) contains the grammar, tests, and larger examples. A complete library catalogue is different from mastering the core language; use focused experiments to learn an API when you need it.
+
+## Integrated coordination example
+
+[Lesson 31: firefighter capstone](../lessons/31-firefighter-coordination/README.md) combines sourced messages, round IDs, condition waits, atomic reservation, list sorting, resource constraints, and failure propagation in one runnable protocol.

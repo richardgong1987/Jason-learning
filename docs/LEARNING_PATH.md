@@ -30,6 +30,7 @@ Each new lesson contains source, a separate MAS configuration, a small real-worl
 | 28 | Adding and removing a plan at runtime | [Open lesson](../lessons/28-dynamic-plan-library/README.md) |
 | 29 | Writing a Java internal action | [Open lesson](../lessons/29-java-internal-action/README.md) |
 | 30 | External actions and environment percepts | [Open lesson](../lessons/30-java-environment/README.md) |
+| 31 | Graduation capstone: firefighter negotiation and reallocation | [Open lesson](../lessons/31-firefighter-coordination/README.md) |
 
 ## How to learn from each example
 
@@ -55,3 +56,7 @@ Write these challenges yourself. Reusing a recipe is useful, but predict and exp
 This path covers the major AgentSpeak/Jason language constructs and common programming patterns. It is not an exhaustive implementation of every standard-library action or infrastructure extension. Advanced follow-up topics include service discovery, agent creation/deletion, plan exchange (`tellHow`/`askHow`), custom agent selection functions, alternative belief bases, priorities/scheduling policies, Java sets/maps/queues, random/time functions, and distributed deployment. Consult the [official internal-action catalogue](https://jason-lang.github.io/api/jason/stdlib/package-summary.html) for the complete library, and add a focused experiment whenever a project needs one of those features.
 
 The Java lessons introduce extension points; they do not implement Python, AI, broker, or physical-device adapters.
+
+## Graduation after Lesson 30
+
+Complete [Lesson 31](../lessons/31-firefighter-coordination/README.md): predict bids, trace acknowledgements, change resource constraints and priority, then implement a queued third incident. Use the mathematical model to explain why an agent is eligible and why a reservation must be released before reassignment.
